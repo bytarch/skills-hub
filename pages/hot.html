@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Skills - GCode Skill Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <nav class="fixed w-full z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-8">
+                    <a href="../index.html" class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">GCode Skill Hub</a>
+                    <div class="hidden md:flex space-x-6">
+                        <a href="skills.html" class="text-gray-300 hover:text-white transition-colors">All Skills</a>
+                        <a href="trending.html" class="text-gray-300 hover:text-white transition-colors">Trending</a>
+                        <a href="hot.html" class="text-white">Hot</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <input type="text" id="searchInput" placeholder="Search skills..." class="bg-gray-800 text-white px-4 py-2 rounded-lg border border-gray-700 focus:outline-none focus:border-blue-500 w-64">
+                        <div id="searchResults" class="absolute right-0 mt-2 w-80 bg-gray-800 rounded-lg shadow-xl hidden max-h-96 overflow-y-auto"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16">
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center space-x-3 mb-8">
+                <div class="text-4xl">🔥</div>
+                <div>
+                    <h1 class="text-3xl font-bold text-white">Hot Skills</h1>
+                    <p class="text-gray-400 mt-2">The hottest skills trending right now</p>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 mb-8">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-400">Source:</p>
+                        <a href="https://skills.sh/hot" target="_blank" class="text-blue-400 hover:text-blue-300">skills.sh/hot</a>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></span>
+                        <span class="text-sm text-gray-400">Live Data</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="hotContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="text-center py-12">
+                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
+                    <p class="text-gray-400 mt-4">Loading hot skills...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 border-t border-gray-700 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
+            <p>&copy; 2024 GCode Skill Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
