@@ -119,7 +119,7 @@ async function fetchStats() {
 
 // UI Functions
 function createSkillCard(skill, showSourceUrl = false) {
-    const sourceUrl = `gcode add ${skill.link}`;
+    const sourceUrl = skill.skillSourceUrl || "Not Available";
     
     return `
         <div class="skill-card bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-gray-600 cursor-pointer" onclick="navigateToSkill('${skill.repository}', '${skill.name}')">
@@ -186,7 +186,7 @@ function createUserCard(userData) {
 
 function navigateToSkill(repository, skillName) {
     const [username, repo] = repository.split('/');
-    window.location.href = `skill-detail.html?repo=${encodeURIComponent(repository)}&name=${encodeURIComponent(skillName)}`;
+    window.location.href = `/pages/skill-detail.html?repo=${encodeURIComponent(repository)}&name=${encodeURIComponent(skillName)}`;
 }
 
 // Search functionality
@@ -358,7 +358,7 @@ async function initSkillDetailPage() {
     
     if (skillData && skillData.skill) {
         const skill = skillData.skill;
-        const sourceUrl = `gcode add /${repo}/${name}`;
+        const sourceUrl = skillData.skillSourceUrl || "Not Available";
         
         container.innerHTML = `
             <div class="bg-gray-800 rounded-xl p-8 border border-gray-700">
